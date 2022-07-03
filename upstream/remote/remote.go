@@ -159,6 +159,7 @@ func (r *Remote) uploadProfile(j *upstream.UploadJob) error {
 	r.logger.Debugf("uploading at %s", u.String())
 	// new a request for the job
 	request, err := http.NewRequest("POST", u.String(), body)
+	r.logger.Debugf("body is %s", body.String())
 	if err != nil {
 		return fmt.Errorf("new http request: %v", err)
 	}
