@@ -114,6 +114,7 @@ func (r *Remote) uploadProfile(j *upstream.UploadJob) error {
 	if err != nil {
 		return fmt.Errorf("url parse: %v", err)
 	}
+	r.logger.Debugf("pprof is:\n  %v", string(j.Profile))
 
 	body := &bytes.Buffer{}
 
